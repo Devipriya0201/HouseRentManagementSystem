@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Property_Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sellername" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Houseno" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Streetname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Zip" Type="bigint" Nullable="false" />
+    <Property Name="Flattype" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Rent" Type="bigint" Nullable="false" />
+    <Property Name="Phone" Type="bigint" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="Images" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="RegisterSeller">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ResetPasswordCode" Type="varchar" MaxLength="500" />
+    <Property Name="ProfileImage" Type="varbinary(max)" />
+    <Property Name="PhoneNumber" Type="bigint" />
+    <Property Name="Aadharno" Type="bigint" />
+  </EntityType>
+  <EntityType Name="RegisterUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ResetPasswordCode" Type="varchar" MaxLength="500" />
+    <Property Name="ProfileImage" Type="varbinary(max)" />
+    <Property Name="PhoneNumber" Type="bigint" />
+    <Property Name="Aadharno" Type="bigint" />
+  </EntityType>
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="Property_Table" EntityType="Self.Property_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegisterSeller" EntityType="Self.RegisterSeller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

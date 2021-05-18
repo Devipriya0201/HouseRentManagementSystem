@@ -1,0 +1,260 @@
+﻿@model HomeRentManagementSystem.ViewModel.Register
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+
+<h2>Register</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        .bg-warning {
+            background-color: #562f56 !important;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .navbar-brand {
+            display: inline-block;
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.75rem;
+            line-height: inherit;
+            white-space: nowrap;
+            font-family: 'Courier New';
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-expand-sm bg-warning" style="margin-top:-50px;">
+        <div class="container" style="margin-left:-1%;font-size:30px; height:100%;font-family:">
+            <div class="navbar-header">
+
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+
+                <label class="logo" style="color:white;font-family:'Courier New';font-weight:bold; ">House Rent Management System</label>
+                <style>
+                    nav .logo {
+                        color: white;
+                        font-size: 32px;
+                        font-family: sans-serif;
+                        line-height: 70px;
+                        padding-left: 110px;
+                    }
+                </style>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="margin-left:120%;border-width:100%; font-size:20px;color:black;font-family:'Courier New';font-weight:bold;">
+
+                    <li>
+
+                        @Html.ActionLink("Login", "Login", "Account")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Register", "Register", "Account")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Home", "Index", "Account")
+
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+        background-color: rosybrown;
+        font-size: 20px;
+        font-family: 'Bookman Old Style';
+    }
+    .wrapper {
+        display: inline-block;
+        position: relative;
+    }
+
+    .reveal-eye {
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        bottom: 1px;
+        z-index: 2;
+        width: 25px;
+        background: url(https://dtzbdy9anri2p.cloudfront.net/cache/b55f544d09a0872a74b4427ce1fe18dd78418396/telerik/img/dist/reveal-password.png) no-repeat;
+        cursor: pointer;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .2s ease 0s, visibility 0s linear .2s;
+        margin-right: 23%;
+        margin-top: 2%;
+    }
+
+        .reveal-eye.is-visible {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+            transition: opacity .2s ease 0s, visibility 0s linear 0s;
+            margin-right: 20%;
+            margin-top: 2%;
+        }
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    function checkShowPasswordVisibility() {
+        var $revealEye = $(this).parent().find(".reveal-eye");
+        if (this.value) {
+            $revealEye.addClass("is-visible");
+        } else {
+            $revealEye.removeClass("is-visible");
+        }
+    }
+
+    $(document).ready(function () {
+        var txtPassword = document.getElementById('passwordTextBox');
+        var $revealEye = $('<span class="reveal-eye"></span>')
+        $(txtPassword).parent().append($revealEye);
+        $(txtPassword).on("keyup", checkShowPasswordVisibility)
+
+        $revealEye.on({
+            mousedown: function () { txtPassword.setAttribute("type", "text") },
+            mouseup: function () { txtPassword.setAttribute("type", "password") },
+            mouseout: function () { txtPassword.setAttribute("type", "password") }
+        });
+    })
+</script>
+<script>
+    function checkShowPasswordVisibility1() {
+        var $revealEye = $(this).parent().find(".reveal-eye");
+        if (this.value) {
+            $revealEye.addClass("is-visible");
+        } else {
+            $revealEye.removeClass("is-visible");
+        }
+    }
+
+    $(document).ready(function () {
+        var txtPassword = document.getElementById('passwordTextBox1');
+        var $revealEye = $('<span class="reveal-eye"></span>')
+        $(txtPassword).parent().append($revealEye);
+        $(txtPassword).on("keyup", checkShowPasswordVisibility1)
+
+        $revealEye.on({
+            mousedown: function () { txtPassword.setAttribute("type", "text") },
+            mouseup: function () { txtPassword.setAttribute("type", "password") },
+            mouseout: function () { txtPassword.setAttribute("type", "password") }
+        });
+    })
+</script>
+<div>
+    @using (Html.BeginForm("SaveRegisterDetails1", "Account"))
+    {
+        <!-- <div style="color:red;">@ViewBag.Message</div>-->
+        <div class="row">
+            <!--Show details are saved successfully message-->
+            <div class="col-lg-10;" style="color: red;font-size:1.3vw">@ViewBag.Message</div>
+
+        </div><br />
+
+
+        <div class="row" style="margin-left:100px;">
+            <div class="col-lg-2">@Html.LabelFor(a => a.FirstName)</div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control", @placeholder = "First Name" })
+                @Html.ValidationMessageFor(a => a.FirstName, "", new { @class = "text - danger", @style = "color:red" })
+            </div>
+
+        </div><br />
+
+        <div class="row"style="margin-left:100px;">
+            <div class="col-lg-2">@Html.LabelFor(a => a.LastName)</div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(a => a.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                @Html.ValidationMessageFor(a => a.LastName, "", new { @class = "text - danger", @style = "color:red" })
+            </div>
+
+        </div><br />
+        <div class="row"style="margin-left:100px;">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Email)</div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(a => a.Email, new { @class = "form-control", @placeholder = "sample@gmail.com" })
+                @Html.ValidationMessageFor(a => a.Email, "", new { @class = "text - danger", @style = "color:red" })
+            </div>
+        </div><br />
+        <div class="row"style="margin-left:100px;">
+            <div class="col-lg-2">@Html.LabelFor(a => a.PhoneNumber)</div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(a => a.PhoneNumber, new { @class = "form-control", @placeholder = "9876543210" })
+                @Html.ValidationMessageFor(a => a.PhoneNumber, "", new { @class = "text - danger", @style = "color:red" })
+            </div>
+        </div><br />
+        <div class="row"style="margin-left:100px;">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Aadharno)</div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(a => a.Aadharno, new { @class = "form-control", @placeholder = "432187654321" })
+                @Html.ValidationMessageFor(a => a.Aadharno, "", new { @class = "text - danger", @style = "color:red" })
+            </div>
+        </div><br />
+        <div class="row"style="margin-left:100px;">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Password)</div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "Password", id = "passwordTextBox", @placeholder = "********" })
+                @Html.ValidationMessageFor(a => a.Password, "", new { @class = "text - danger", @style = "color:red" })
+            </div>
+        </div>
+        <br />
+        <div class="row"style="margin-left:100px;">
+            <div class="col-lg-2">@Html.LabelFor(a => a.ConfirmPassword)</div>
+            <div class="col-lg-4">
+                @Html.TextBoxFor(a => a.ConfirmPassword, new { @class = "form-control", id = "passwordTextBox1", type = "Password", @placeholder = "********" })
+                @Html.ValidationMessageFor(a => a.ConfirmPassword, "", new { @class = "text - danger", @style = "color:red" })
+            </div>
+        </div>
+        <br />
+       
+
+        <input style="margin-left:100px;"type="submit" value="Register" class="btn btn-primary" />
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    }
+
+</div>

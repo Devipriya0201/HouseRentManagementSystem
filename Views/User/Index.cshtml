@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <style>
+
+        .bg-warning {
+            background-color: #562f56 !important;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .navbar-brand {
+            display: inline-block;
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.75rem;
+            line-height: inherit;
+            white-space: nowrap;
+            font-family: 'Courier New';
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-expand-sm bg-warning" style="margin-top:-100px;">
+        <div class="container" style="margin-left:-1%;font-size:30px; height:200%;">
+            <div class="navbar-header">
+
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+
+                <label class="logo" style="color:white;font-family:'Courier New';font-weight:bold; ">House Rent Management System</label>
+                <style>
+                    nav .logo {
+                        color: white;
+                        font-size: 32px;
+                        font-family: sans-serif;
+                        line-height: 70px;
+                        padding-left: 110px;
+                    }
+
+                    body {
+                        background-color: rosybrown;
+                        font-size: 20px;
+                        font-family: 'Bookman Old Style';
+                    }
+                </style>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="margin-left:120%;border-width:100%; font-size:20px;color:black;font-family:'Courier New';font-weight:bold;">
+
+                    <li>
+
+                        @Html.ActionLink("ViewHouse", "ViewHouse", "User")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Bookings", "Bookings", "User")
+
+
+                    </li>
+                    
+                    <li>
+
+                        @Html.ActionLink("Myprofile", "MyProfile", "User")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Logout", "Index", "User")
+
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/Content/image/house.jpg" alt="House" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="~/Content/image/image2.jpg" alt="Home" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="~/Content/image/image3.jpg" alt="Flat" style="width:100%;">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

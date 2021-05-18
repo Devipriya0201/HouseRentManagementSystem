@@ -1,0 +1,133 @@
+﻿@model HomeRentManagementSystem.ViewModel.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<h2>Customer Login</h2>
+<div style="color:green;margin-left:0px">@ViewBag.Saved</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        .bg-warning {
+            background-color: #562f56 !important;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .navbar-brand {
+            display: inline-block;
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.75rem;
+            line-height: inherit;
+            white-space: nowrap;
+            font-family: 'Courier New';
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-expand-sm bg-warning" style="margin-top:-50px;margin-right">
+        <div class="container" style="margin-left:-1%;font-size:30px; height:100%;font-family:">
+            <div class="navbar-header">
+
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+
+                <label class="logo" style="color:white;font-family:'Courier New';font-weight:bold; ">House Rent Management System</label>
+                <style>
+                    nav .logo {
+                        color: white;
+                        font-size: 32px;
+                        font-family: sans-serif;
+                        line-height: 70px;
+                        padding-left: 110px;
+                    }
+                </style>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="margin-left:120%;border-width:100%; font-size:20px;color:black;font-family:'Courier New';font-weight:bold;">
+
+                    <li>
+
+                        @Html.ActionLink("Login", "Cus_Login", "Account")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Register", "Cus_Register", "Account")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Home", "Index", "Account")
+
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</body>
+</html>
+
+<div>
+    @using (Html.BeginForm("Login1", "Account"))
+    {
+        <!--<div style="color:red;margin-left:50px;">@Html.ValidationSummary()</div>-->
+        <div class="row">
+            <!--Show details are saved successfully message-->
+            <div class="col-lg-12">@ViewBag.Message</div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Email)</div>
+            <div class="col-lg-10">
+                @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Password)</div>
+            <div class="col-lg-10">
+                @Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "Password" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div>
+            @Html.ActionLink("Forgot Password", "ForgotPassword", "Account")
+        </div>
+        <input type="submit" value="Login" class="btn btn-primary" />
+    }
+
+</div>

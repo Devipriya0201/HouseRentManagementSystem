@@ -1,0 +1,267 @@
+﻿@model HomeRentManagementSystem.ViewModel.PropertyModel
+@{
+    ViewBag.Title = "Viewhouse";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        .bg-warning {
+            background-color: #562f56 !important;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .navbar-brand {
+            display: inline-block;
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.75rem;
+            line-height: inherit;
+            white-space: nowrap;
+            font-family: 'Courier New';
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-expand-sm bg-warning" style="margin-top:-50px;">
+        <div class="container" style="margin-left:-1%;font-size:30px; height:100%;font-family:">
+            <div class="navbar-header">
+
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+
+                <label class="logo" style="color:white;font-family:'Courier New';font-weight:bold; ">House Rent Management System</label>
+                <style>
+                    nav .logo {
+                        color: white;
+                        font-size: 32px;
+                        font-family: sans-serif;
+                        line-height: 70px;
+                        padding-left: 110px;
+                    }
+                </style>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="margin-left:120%;border-width:100%; font-size:20px;color:black;font-family:'Courier New';font-weight:bold;">
+
+                    <li>
+
+                        @Html.ActionLink("AddHouse", "AddHouse", "Admin")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("ViewHouse", "ViewHouse", "Admin")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("CustomerDetails", "CustomerDetails", "Admin")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Bookings", "Bookings", "Admin")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Myprofile", "MyProfile", "Admin")
+
+
+                    </li>
+                    <li>
+
+                        @Html.ActionLink("Logout", "Index", "Account")
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <style>
+        body {
+            background-color: rosybrown;
+            font-size: 20px;
+            font-family: 'Bookman Old Style';
+        }
+    </style>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            
+                {
+                    <h5>House added by you.....</h5>
+
+                    <div class="col-sm-6 form-group">
+                        <label>@Html.LabelFor(a => a.Sellername)</label>
+                        @Html.DisplayFor(a => a.Sellername, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6 order-first">
+                                <label>@Html.LabelFor(a => a.Houseno)</label>
+                                @Html.DisplayFor(a => a.Houseno, new { @class = "form-control" })
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>@Html.LabelFor(a => a.Streetname)</label>
+                                @Html.DisplayFor(a => a.Streetname, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            @Html.DisplayFor(a => a.Address, new { @class = "form-control" })
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>City</label>
+                                @Html.DisplayFor(a => a.City, new { @class = "form-control" })
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Zip</label>
+                                @Html.DisplayFor(a => a.Zip, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>FlatType</label>
+                                @Html.DisplayFor(a => a.Flattype, new { @class = "form-control" })
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Rent</label>
+                            @Html.DisplayFor(a => a.Rent, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            @Html.DisplayFor(a => a.Phone, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            @Html.DisplayFor(a => a.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            @Html.DisplayFor(a => a.Description, new { @class = "form-control" })
+                        </div>
+
+                        <br />
+                        <input type="submit" value="Edit" class="btn btn-primary" />
+                    </div>
+
+                }
+                <style>
+
+                    body {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                    }
+
+                    .header,
+                    .marketing,
+                    .footer {
+                        padding-right: 15px;
+                        padding-left: 15px;
+                    }
+
+                    .header {
+                        border-bottom: 1px solid #e5e5e5;
+                    }
+
+                        .header h3 {
+                            padding-bottom: 19px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            line-height: 40px;
+                        }
+
+                    .footer {
+                        padding-top: 19px;
+                        color: #777;
+                        border-top: 1px solid #e5e5e5;
+                    }
+
+
+                    .container-narrow > hr {
+                        margin: 30px 0;
+                    }
+
+                    .jumbotron {
+                        text-align: center;
+                        border-bottom: 1px solid #e5e5e5;
+                    }
+
+                        .jumbotron .btn {
+                            padding: 14px 24px;
+                            font-size: 21px;
+                        }
+
+                    .marketing {
+                        margin: 40px 0;
+                    }
+
+                        .marketing p + h4 {
+                            margin-top: 28px;
+                        }
+
+
+                    .header,
+                    .marketing,
+                    .footer {
+                        padding-right: 0;
+                        padding-left: 0;
+                    }
+
+                    .header {
+                        margin-bottom: 30px;
+                    }
+
+                    .jumbotron {
+                        border-bottom: 0;
+                    }
+                    }
+                </style>
+            </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
