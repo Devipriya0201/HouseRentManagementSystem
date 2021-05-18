@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Property_Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sellername" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Houseno" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Streetname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Zip" Type="bigint" Nullable="false" />
+          <Property Name="Flattype" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Rent" Type="bigint" Nullable="false" />
+          <Property Name="Phone" Type="bigint" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Images" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="RegisterSeller">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ResetPasswordCode" Type="varchar" MaxLength="500" />
+          <Property Name="ProfileImage" Type="varbinary(max)" />
+          <Property Name="PhoneNumber" Type="bigint" />
+          <Property Name="Aadharno" Type="bigint" />
+        </EntityType>
+        <EntityType Name="RegisterUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ResetPasswordCode" Type="varchar" MaxLength="500" />
+          <Property Name="ProfileImage" Type="varbinary(max)" />
+          <Property Name="PhoneNumber" Type="bigint" />
+          <Property Name="Aadharno" Type="bigint" />
+        </EntityType>
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="Property_Table" EntityType="Self.Property_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegisterSeller" EntityType="Self.RegisterSeller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RegisterSeller">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ResetPasswordCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="Int64" />
+          <Property Name="Aadharno" Type="Int64" />
+        </EntityType>
+        <EntityType Name="RegisterUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ResetPasswordCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="Int64" />
+          <Property Name="Aadharno" Type="Int64" />
+        </EntityType>
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RegisterSellers" EntityType="Self.RegisterSeller" />
+          <EntitySet Name="RegisterUsers" EntityType="Self.RegisterUser" />
+          <EntitySet Name="Property_Table" EntityType="DatabaseModel.Property_Table" />
+        </EntityContainer>
+        <EntityType Name="Property_Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sellername" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Houseno" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Streetname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="Int64" Nullable="false" />
+          <Property Name="Flattype" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Rent" Type="Int64" Nullable="false" />
+          <Property Name="Phone" Type="Int64" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Images" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="RegisterSellers">
+            <EntityTypeMapping TypeName="DatabaseModel.RegisterSeller">
+              <MappingFragment StoreEntitySet="RegisterSeller">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ResetPasswordCode" ColumnName="ResetPasswordCode" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Aadharno" ColumnName="Aadharno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegisterUsers">
+            <EntityTypeMapping TypeName="DatabaseModel.RegisterUser">
+              <MappingFragment StoreEntitySet="RegisterUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ResetPasswordCode" ColumnName="ResetPasswordCode" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Aadharno" ColumnName="Aadharno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Property_Table">
+            <EntityTypeMapping TypeName="DatabaseModel.Property_Table">
+              <MappingFragment StoreEntitySet="Property_Table">
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Rent" ColumnName="Rent" />
+                <ScalarProperty Name="Flattype" ColumnName="Flattype" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Streetname" ColumnName="Streetname" />
+                <ScalarProperty Name="Houseno" ColumnName="Houseno" />
+                <ScalarProperty Name="Sellername" ColumnName="Sellername" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
